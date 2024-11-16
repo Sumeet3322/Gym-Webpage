@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  background-color: #272727;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.blur-backdrop-filter {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+
+.animateBox {
+  animation-duration: 2s;
+  animation-name: animate-box;
+}
+
+.imageSliteLeft{
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 30% 100%);
+
+}
+
+.textsSlite{
+  clip-path: polygon(0 0, 70% 0, 100% 100%, 0 100%);
+
+}
+.imageSliteRight{
+  clip-path: polygon(0 0, 100% 0%, 60% 100%, 0% 100%);
+
+}
+@media (max-width:768px){
+  .imageSliteLeft{
+    clip-path: none;
+  }
+  .textsSlite{
+    clip-path: none;
+  }
+  .imageSliteRight{
+    clip-path: none;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* @keyframes animate-box {
+  from {scale: .9; opacity: 0;}
+  to{scale: 1; opacity: 1;}
 }
 
-.App-link {
-  color: #61dafb;
+.boxFade_left{
+  animation:fade-in linear;
+  animation-timeline: view();
+  animation-range-start: contain;
+  animation-range-end: contain;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+@keyframes fade-in {
+  from { scale: .8; opacity: 0;}
+  to{scale: 1; opacity: 1;}
+} */
